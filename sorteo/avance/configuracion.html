@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: -webkit-linear-gradient(to right, hsla(22, 100%, 81%, 0.61), #ffafbc9d), url(../img/portada.jpg);  
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, hsla(22, 100%, 81%, 0.61), #ffafbc9d), url(../img/portada.jpg); 
+        }
+
+        header {
+            background-color: coral;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: rgba(254, 251, 250, 0.5);
+            
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: coral; 
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .language-section {
+            margin-bottom: 20px; 
+        }
+
+        /*simbolo home*/
+        .home-link {
+            position: fixed;
+            top: 20px; /* Ajusta la distancia desde la parte superior */
+            left: 20px; /* Ajusta la distancia desde la izquierda */
+            z-index: 9999; /* Asegura que esté en la parte superior */
+        }
+
+        .home-icon {
+            display: block;
+            /* Agrega otros estilos según sea necesario */
+        }
+
+        /*boton de regreso*/
+        .back-link {
+            position: fixed;
+            top: 21px;
+            left: 60px;
+            z-index: 9999;
+        }
+
+        .back-icon {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1 id="header-title">Configuración de Perfil</h1>
+        <a href="../index.html" class="home-link">
+            <img src="../assets/home.svg" alt="Home" width="30" height="30" class="home-icon">
+        </a> 
+    <a href="Perfil 2.0.html" class="back-link">
+        <img src="../assets/back.svg" alt="back" width="30" height="30" class="back-icon">
+    </a> 
+    </header>
+
+    <section class="language-section">
+        <h2 id="language-title">Seleccionar Idioma:</h2>
+        <select id="language" onchange="cambiarIdioma()">
+            <option value="es">Español</option>
+            <option value="en">Inglés</option>
+           
+        </select>
+    </section>
+
+    <section>
+        <h2 id="change-info-title">Cambiar Información</h2>
+        <label for="new-name" id="new-name-label">Nuevo Nombre:</label>
+        <input type="text" id="new-name" placeholder="Tu nuevo nombre">
+
+        <label for="new-phone" id="new-phone-label">Nuevo Teléfono:</label>
+        <input type="tel" id="new-phone" placeholder="Número de teléfono">
+
+        <label for="new-password" id="new-password-label">Nueva Contraseña:</label>
+        <input type="password" id="new-password" placeholder="Nueva contraseña">
+
+        <button onclick="guardarCambios()" id="save-changes-btn">Guardar Cambios</button>
+    </section>
+
+    <section>
+        <h2 id="change-profile-pic-title">Cambiar Foto de Perfil</h2>
+        <label for="file-input" id="file-input-label">Seleccionar Foto:</label>
+        <input type="file" id="file-input" accept="image/*" onchange="cambiarFotoPerfil(this)">
+    </section>
+
+    <script>
+        const traducciones = {
+            es: {
+                'header-title': 'Configuración de Perfil',
+                'change-info-title': 'Cambiar Información',
+                'new-name-label': 'Nuevo Nombre:',
+                'new-phone-label': 'Nuevo Teléfono:',
+                'new-password-label': 'Nueva Contraseña:',
+                'save-changes-btn': 'Guardar Cambios',
+                'language-title': 'Seleccionar Idioma:',
+                'change-profile-pic-title': 'Cambiar Foto de Perfil',
+                'file-input-label': 'Seleccionar Foto:'
+            },
+            en: {
+                'header-title': 'Profile Settings',
+                'change-info-title': 'Change Information',
+                'new-name-label': 'New Name:',
+                'new-phone-label': 'New Phone:',
+                'new-password-label': 'New Password:',
+                'save-changes-btn': 'Save Changes',
+                'language-title': 'Select Language:',
+                'change-profile-pic-title': 'Change Profile Picture',
+                'file-input-label': 'Select Photo:'
+            }
+            
+        };
+
+        function cambiarIdioma() {
+            const selectedLanguage = document.getElementById('language').value;
+            const elementos = document.querySelectorAll('[id^="header-"], [id^="change-info-"], [id^="new-name-"], [id^="new-phone-"], [id^="new-password-"], [id^="language-"], [id^="save-changes-"], [id^="change-profile-pic-"], [id^="file-input-"]');
+
+            elementos.forEach(elemento => {
+                const id = elemento.id;
+                const traduccion = traducciones[selectedLanguage][id];
+                if (traduccion) {
+                    elemento.innerText = traduccion;
+                }
+            });
+        }
+
+        function guardarCambios() {
+            const newName = document.getElementById('new-name').value;
+            const newPhone = document.getElementById('new-phone').value;
+            const newPassword = document.getElementById('new-password').value;
+
+            if (newName) {
+                alert(`Nombre cambiado a: ${newName}`);
+            }
+
+            if (newPhone) {
+                alert(`Número de teléfono cambiado a: ${newPhone}`);
+            }
+
+            if (newPassword) {
+                alert("Contraseña cambiada con éxito");
+            }
+        }
+
+        function cambiarFotoPerfil(input) {
+            const file = input.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    alert("Foto de perfil cambiada con éxito");
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

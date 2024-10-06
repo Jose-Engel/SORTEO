@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: -webkit-linear-gradient(to right, hsla(22, 100%, 81%, 0.61), #ffafbc9d), url(../img/portada.jpg);  
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, hsla(22, 100%, 81%, 0.61), #ffafbc9d), url(../img/portada.jpg); 
+            background-size: cover;
+            background-position: center;
+           
+        }
+
+        header, nav, #content, #configuracion, footer {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        header, nav {
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            display: block;
+        }
+
+        nav a:hover {
+            background-color: coral;
+        }
+
+        #configuracion, #content {
+            text-align: left;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5%;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        #configuracion {
+            display: none;
+        }
+
+        #config-form {
+            margin-top: 10px;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            padding: 10px;
+            background-color: coral;
+            border-radius: 5px;
+        }
+
+        .profile-info {
+        background-color: rgb(249, 247, 247, 0.7);
+        width: 70%; /* Ancho del cuadro */
+        max-width: 500px; /* Ancho máximo del cuadro */
+        margin: 1px auto; /* Centrar horizontalmente */
+        padding: 20px; /* Espaciado interior */
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
+        }
+
+
+        .profile-picture {
+            max-width: 100px;
+            border-radius: 50%;
+        }
+
+        #collage-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .collage-image {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+
+        .collage-image:hover {
+            filter: brightness(1.2);
+            transform: scale(1.1);
+        }
+
+        .collage-image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            transition: filter 0.3s;
+        }
+
+        .collage-image:hover img {
+            filter: blur(5px);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000000;
+            font-size: 1.2em;
+            text-align: center;
+            display: none;
+        }
+
+        .collage-image:hover .image-overlay {
+            display: block;
+        }
+
+        /*simbolo home*/
+
+        .home-link {
+            position: fixed;
+            top: 20px; /* Ajusta la distancia desde la parte superior */
+            left: 20px; /* Ajusta la distancia desde la izquierda */
+            z-index: 9999; /* Asegura que esté en la parte superior */
+        }
+
+        .home-icon {
+            display: block;
+            /* Agrega otros estilos según sea necesario */
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="profile-info">
+            <img src="https://cdn-icons-png.flaticon.com/512/64/64572.png" alt="Profile Picture" class="profile-picture" id="profile-img">
+            <div class="profile-details">
+                <h1>Tu Nombre</h1>
+                <p>Correo Electrónico: ejemplo@ejemplo.com</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="configuracion.html">Configuración</a></li>
+                <li><a href="../FAVORITOS - JS/index.html">Recetas Guardadas</a></li>
+                <li><a href="../index.html" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+        <a href="../index.html" class="home-link">
+            <img src="../assets/home.svg" alt="Home" width="30" height="30" class="home-icon">
+        </a> 
+    </header>
+
+    <section id="content">
+        <h2>Comunidad LowMenu/Lo mas destacado</h2>
+        <p>Tambien te puede interesar...</p>
+
+        
+        <div id="collage-container">
+            <div class="collage-image">
+                <img src="https://www.recetasnestle.com.mx/sites/default/files/styles/crop_article_banner_desktop_nes/public/2023-06/plato-arroz-pollo-receta-facil-economica-almuerzo.jpg?itok=TI144sC0" alt="Receta 1">
+                <div class="image-overlay">Leer más</div>
+            </div>
+            <div class="collage-image">
+                <img src="https://cdn7.kiwilimon.com/ss_secreto/4291/640x640/p_27474.jpg.webp" alt="Receta 2">
+                <div class="image-overlay">Leer más</div>
+            </div>
+            <div class="collage-image">
+                <img src="https://www.antojoentucocina.com/wp-content/uploads/2019/09/9-recetas-vuelta-al-cole.jpg" alt="Receta 3">
+                <div class="image-overlay">Leer más</div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="configuracion" class="hidden">
+        <h2>Configuración de Cuenta</h2>
+        <form id="config-form">
+            <label for="new-name">Nuevo Nombre:</label>
+            <input type="text" id="new-name" placeholder="Tu nuevo nombre">
+
+            <label for="new-email">Nuevo Correo Electrónico:</label>
+            <input type="email" id="new-email" placeholder="correo@ejemplo.com">
+
+            <button type="button" onclick="guardarConfiguracion()">Guardar Configuración</button>
+        </form>
+
+        <h2>Cambiar Foto de Perfil</h2>
+        <div id="profile-container">
+            <label for="file-input" id="change-btn">Cambiar Foto</label>
+            <input type="file" id="file-input" accept="image/*" onchange="cambiarFotoPerfil(this)">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Mi Perfil</p>
+    </footer>
+
+    <script>
+        document.querySelector('nav ul li:nth-child(3) a').addEventListener('click', function () {
+            mostrarConfiguracion();
+        });
+
+        function mostrarConfiguracion() {
+            const configSection = document.getElementById('configuracion');
+            configSection.classList.toggle('hidden');
+        }
+
+        function guardarConfiguracion() {
+            const newName = document.getElementById('new-name').value;
+            const newEmail = document.getElementById('new-email').value;
+
+            if (newName) {
+                document.querySelector('.profile-details h1').innerText = newName;
+            }
+
+            if (newEmail) {
+                document.querySelector('.profile-details p').innerText = `Correo Electrónico: ${newEmail}`;
+            }
+
+            mostrarConfiguracion();
+        }
+
+        function cambiarFotoPerfil(input) {
+            const file = input.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    document.getElementById('profile-img').src = e.target.result;
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function cerrarSesion() {
+            // Puedes redirigir a la página de inicio de sesión o ejecutar otras acciones de cierre de sesión aquí.
+            alert("¡Sesión cerrada!");
+        }
+    </script>
+
+</body>
+
+</html>
