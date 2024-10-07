@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+}
+
+/*barra de busqueda*/
+
+.buscador {
+    position: absolute;
+    left: 48%;
+    top: 45%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+}
+
+.buscador input {
+    outline: none;
+    box-sizing: border-box;
+    height: 60px;
+    width: 0px;
+    padding: 0 20px;
+    color: #000;
+    border-radius: 50px;
+    font-size: 20px;
+    border: 1px solid #D50000;
+    transition: all .7s ease;
+}
+
+.buscador input::placeholder {
+    color: grey;
+}
+
+.buscador .btn {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 80px;
+    height: 80px;
+    background: coral;
+    line-height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.buscador .btn i {
+    font-size: 25px;
+    color: white;
+    line-height: 80px;
+    transition: all .7s ease;
+}
+
+.buscador:hover input {
+    width: 350px;
+}
+
+.buscador:hover .btn i {
+    transform: rotate(-360deg);
+}
+
+.buscador .btn:hover {
+    background: #cc0000;
+}
+/*fin barra de busqueda*/
+    
+.recetas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.receta-box {
+    border: 1px solid coral;
+    padding: 10px;
+    margin: 10px;
+    width: 350px; /* Ajusta el ancho según tus necesidades */
+    height: 310px;
+    max-width: 100%;
+    background-color: whitesmoke;
+    position: relative;
+    overflow: hidden;
+}
+
+.receta-imagen {
+    width: 350px; /* Ajusta el ancho según tus necesidades */ /* Ajusta la altura automáticamente */
+    height: 150px;
+    object-fit: cover; /* Ajusta el comportamiento de la imagen */
+}
+
+.contenido-receta {
+    padding: 10px; /* Ajusta el espaciado interno según tus necesidades */
+}
+
+.detalles-receta {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: coral;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Agrega una transición suave al cambio de tamaño */
+}
+
+button:hover {
+    background-color: darkorange;
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón al pasar el cursor sobre él */
+}
+
+.button-container {
+    text-align: center; /* Centra el contenido horizontalmente */
+    margin-top: 10px;   /* Ajusta según tus necesidades para agregar espacio entre el contenido y el botón */
+}
+
+
+
+.heading{
+    background-color: coral;
+    color: white;
+    margin-bottom: 30px;
+    padding: 30px 0;
+    grid-column: 1/-1;
+    text-align: center;
+}
+
+.heading>h1{
+    font-weight: 400;
+    background-color: coral;
+    font-size: 30px;
+    letter-spacing: 10px;
+    margin-bottom: 10px;
+}
+
+.heading>h3{
+    background: coral;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 5px;
+}
+
+.menu{
+    padding: 0 10px 30px 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+    grid-gap: 20px 40px;
+}
+
+/*simbolo home*/
+.home-link {
+    position: fixed;
+    top: 20px; /* Ajusta la distancia desde la parte superior */
+    left: 20px; /* Ajusta la distancia desde la izquierda */
+    z-index: 9999; /* Asegura que esté en la parte superior */
+}
+
+.home-icon {
+    display: block;
+    /* Agrega otros estilos según sea necesario */
+}
