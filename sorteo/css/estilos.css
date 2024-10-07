@@ -1,0 +1,575 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'open sans';
+}
+
+.contenedor{
+     padding: 60px 0;
+     width: 90%;
+     max-width: 1000px;
+     margin: auto;
+     overflow: hidden;
+}
+
+.titulo{
+    color: coral;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/*header*/
+
+header {
+    width: 100%;
+    height: 600px;
+    background: #FFAFBD;
+    background: -webkit-linear-gradient(to right, hsla(22, 100%, 81%, 0.61), #ffafbc9d), url(../img/inicio.jpg);
+    background: linear-gradient(to right, hsla(22, 100%, 81%, 0.61), #ffafbc9d), url(../img/inicio.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Para pantallas medianas (tabletas) */
+@media (max-width: 1024px) {
+    header {
+        height: 500px; /* Reducimos la altura para pantallas medianas */
+        background-attachment: scroll; /* Quitamos el background fijo en dispositivos táctiles */
+    }
+}
+
+/* Para pantallas pequeñas (teléfonos) */
+@media (max-width: 768px) {
+    header {
+        height: 400px; /* Reducimos aún más la altura para pantallas pequeñas */
+        background-attachment: scroll; /* En móviles, "fixed" puede causar problemas de rendimiento */
+        background-size: cover; /* Aseguramos que la imagen cubra bien la pantalla */
+    }
+}
+
+
+nav{
+    text-align: right;
+    padding: 30px 50px 0 0;
+}
+
+nav > a{
+    color: #fff;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+
+}
+
+nav > a:hover{
+    text-decoration: underline;
+    
+}
+
+/* Estilos para pantallas grandes (escritorios) */
+header .texto-header {
+    display: flex;
+    height: 430px;
+    width: 100%;
+    align-items: center;
+    justify-content: center; /* Corregido: justify-content para centrar */
+    flex-direction: column;
+    text-align: center;
+}
+
+.textos-header h1 {
+    font-size: 50px;
+    color: #fff;
+    margin: 100px 0px;
+}
+
+.texto-header h2 {
+    font-size: 30px;
+    color: #fff;
+    margin: -60px 0px;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 50px 0;
+}
+
+.forms {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Ajuste de tamaño máximo */
+    width: 100%; /* Para que ocupe el 100% en pantallas más pequeñas */
+}
+
+/* Contenedor del iframe */
+.iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 75%; /* Relación de aspecto 16:9 (ajusta si es necesario) */
+    height: 0;
+    overflow: hidden;
+}
+
+/* Estilos del iframe */
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* Media queries para pantallas medianas (tabletas) */
+@media (max-width: 1024px) {
+    .textos-header h1 {
+        font-size: 40px; /* Disminuir tamaño de fuente en tabletas */
+        margin: 80px 0px;
+    }
+
+    .texto-header h2 {
+        font-size: 25px;
+        margin: -40px 0px;
+    }
+
+    .forms {
+        padding: 15px; /* Reducir padding en tabletas */
+        max-width: 90%; /* Hacerlo más adaptable */
+    }
+}
+
+/* Media queries para pantallas pequeñas (teléfonos) */
+@media (max-width: 768px) {
+    header .texto-header {
+        height: auto; /* Ajustar altura para pantallas pequeñas */
+        padding: 20px 0; /* Añadir espaciado para evitar que esté muy comprimido */
+    }
+
+    .textos-header h1 {
+        font-size: 32px; /* Ajustar tamaño de la fuente para pantallas pequeñas */
+        margin: 60px 0px;
+    }
+
+    .texto-header h2 {
+        font-size: 20px;
+        margin: -30px 0px;
+    }
+
+    .forms {
+        padding: 10px; /* Reducir padding en pantallas más pequeñas */
+        max-width: 95%; /* Adaptarse al tamaño del dispositivo */
+    }
+}
+
+
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+
+/*about us*/
+main .recetas{
+    padding: 30px 0 60px 0;
+}
+
+.contenedor_recetaseconomicas{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.imagen-recetas-eco{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin: 30px 0;
+}
+.contenedor_recetaseconomicas .contenido-texto{
+    width: 50%;
+    margin: 30px 0;
+}
+
+.contenido-texto h3{
+    margin-bottom: 15px;
+
+}
+
+.contenido-texto h3 span{
+    background-color: coral;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.5);
+    margin-right: 6px;
+}
+
+.contenido-texto p{
+    padding: 0px 0px 30px 15px;
+    font-weight: 300;
+    text-align: justify;
+}
+
+/*populares*/
+
+.recetas{
+    background: #f2f2f2;
+}
+
+.galeria-recetas{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.imagen-recetas{
+    width: 24%;
+    margin-bottom: 30px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.5)
+}
+
+.imagen-recetas > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hover-recetas{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background: hsla(29, 97%, 46%, 0.7);
+    transition: transform .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hover-recetas img{
+    width: 50px;   
+}
+
+.hover-recetas p{
+    color: #fff;
+}
+
+.imagen-recetas:hover .hover-recetas{
+    transform: scale(1);
+}
+
+
+.secciones{
+    background: #f2f2f2;
+    padding-bottom: 30px;
+}
+
+.secciones-cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.secciones-int{
+    width: 28%;
+    text-align: center;
+}
+
+.secciones-int img{
+    width: 90%;
+}
+
+.servicio-int p{
+    margin: 10px 0;
+    font-weight: 300;
+    text-align: justify;
+}
+
+footer{
+    background: rgb(223, 120, 2);
+    padding: 60px 0 30px 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+.contenedor-footer{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #ccc;
+}
+
+.content-foo{
+    text-align: center;
+}
+
+.content-foo h4{
+    color:#fff;
+    border-bottom: 3px solid rgb(122, 79, 13);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.content-foo p{
+    color:#fff;
+}
+
+.titulo-final{
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    color: #000000;
+}
+
+@media screen and (max-width:900px) {
+    header{
+        background-position: center;
+    }
+    .contenedor_recetaseconomicas{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .recetaseconomicas .contenido-texto{
+        width: 90%;
+    }
+
+    .imagen-recetas-eco{
+        width: 90%;
+    }
+    /*Galeria*/
+    .imagen-recetas{
+        width: 44%;
+    }
+    /*Secciones*/
+    .secciones-cont{
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .secciones-int{
+        width: 100%;
+        text-align: center;
+    }
+
+    .secciones-int:nth-child(1), .secciones-int:nth-child(2){
+        margin-bottom: 60px;
+    }
+
+    .secciones-int img{
+        width: 90%;
+        height: 90%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    nav{
+        text-align: center;
+        padding: 30px 0 0 0;
+    }
+
+    nav > a{
+        margin-right: 5px;
+    }
+
+    .textos-header h1{
+        font-size: 35px;
+    }
+    
+    .textos-header h2{
+        font-size: 20px;
+    }
+
+   .imagen-recetas-eco{
+    margin-bottom: 60px;
+    width: 99%;
+   }
+   
+   .recetaseconomicas .contenido-texto{
+    width: 95%;
+   }
+
+   .imagen-recetas{
+    width: 95%;
+   }
+
+   .contenedor-footer{
+    flex-direction: column;
+    border:none;
+   }
+   
+   .content-foo{
+    margin-bottom: 20px;
+    text-align: center;
+   }
+
+   .content-foo h4{
+    border: none;
+   }
+
+   .content-foo p{
+    color:#ccc;
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 20px;
+   }
+
+   .titulo-final{
+    font-size: 20px;
+   }
+}
+
+/* Barra desplegable*/
+#btn-menu{
+    display: none;
+}
+.container-menu{
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100vh;
+    top: 0;left: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+#btn-menu:checked ~ .container-menu{
+    opacity: 1;
+    visibility: visible;
+}
+.cont-menu{
+    width: 100%;
+    max-width: 250px;
+    background: #1c1c1c;
+    height: 100vh;
+    position: relative;
+    transition: all 500ms ease;
+    transform: translateX(-100%);
+}
+#btn-menu:checked ~ .container-menu .cont-menu{
+    transform: translateX(0%);
+}
+.cont-menu nav{
+    transform: translateY(15%);
+}
+.cont-menu nav a{
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: #c7c7c7;
+    border-left: 5px solid transparent;
+    transition: all 400ms ease;
+}
+.cont-menu nav a:hover{
+    border-left: 5px solid #c7c7c7;
+    background: #1f1f1f;
+}
+.cont-menu label{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/*barra de busqueda*/
+
+.buscador {
+	position: absolute;
+	left: 48%;
+	top: 45%;
+	transform: translate(-50%,-50%);
+	padding: 10px;
+}
+
+input {
+	outline: none;
+	box-sizing: border-box;
+	height: 60px;
+	width: 0px;
+	padding: 0 20px;
+	color: #000;
+	border-radius: 50px;
+	font-size: 20px;
+	border: 1px solid #D50000;
+	transition: all .7s ease;
+}
+
+::placeholder {
+	color: grey;
+}
+
+.btn {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 80px;
+	height: 80px;
+	background: coral;
+	line-height: 80px;
+	border-radius: 50%;
+	text-align: center;
+	cursor: pointer;
+	transition: .5s;
+}
+
+.btn i {
+	font-size: 25px;
+	color: white;
+	line-height: 80px;
+	transition: all .7s ease;
+}
+
+.buscador:hover input {
+	width: 350px;
+}
+
+.buscador:hover i{
+	transform: rotate(-360deg);
+}
+
+.btn:hover{
+	background: #cc0000;
+}
+
+/*simbolo home*/
+
+.home-link {
+    position: fixed;
+    top: 20px; /* Ajusta la distancia desde la parte superior */
+    left: 20px; /* Ajusta la distancia desde la izquierda */
+    z-index: 9999; /* Asegura que esté en la parte superior */
+}
+
+.home-icon {
+    display: block;
+    /* Agrega otros estilos según sea necesario */
+}
+
